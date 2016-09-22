@@ -55,8 +55,11 @@
         <version.war.plugin>2.5</version.war.plugin>
 
         <!-- maven-compiler-plugin -->
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <wildfly.hostname>192.168.99.100</wildfly.hostname>
+        <wildfly.username>admin</wildfly.username>
+        <wildfly.password>admin_123</wildfly.password>
     </properties>
 
 
