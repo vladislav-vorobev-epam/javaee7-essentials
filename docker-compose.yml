@@ -19,7 +19,7 @@ services:
       restart: always
       ports:
         - 9990:9990
-        - 8080:8181
+        - 8080:8080
         - 8787:8787
       logging:
         options:
