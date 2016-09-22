@@ -1,0 +1,29 @@
+version: '2'
+services:
+  mysql:
+      image: mysql
+      restart: always
+      ports:
+        - 3306:3306
+      environment:
+        - MYSQL_ROOT_PASSWORD=123
+        - MYSQL_DATABASE=todo
+        - MYSQL_USER=todo
+        - MYSQL_PASSWORD=todo
+      logging:
+        options:
+          max-size: "10m"
+          max-file: "10"
+  jboss:
+      build: .
+      restart: always
+      ports:
+        - 9990:9990
+        - 8080:8181
+        - 8787:8787
+      logging:
+        options:
+          max-size: "10m"
+          max-file: "10"
+      depends_on:
+        - mysql
