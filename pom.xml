@@ -57,7 +57,7 @@
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <wildfly.hostname>192.168.99.100</wildfly.hostname>
+        <!--<wildfly.hostname>192.168.99.100</wildfly.hostname>-->
         <wildfly.username>admin</wildfly.username>
         <wildfly.password>admin_123</wildfly.password>
     </properties>
@@ -196,6 +196,11 @@
             <groupId>org.jboss.arquillian.protocol</groupId>
             <artifactId>arquillian-protocol-servlet</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
         </dependency>
 
     </dependencies>
