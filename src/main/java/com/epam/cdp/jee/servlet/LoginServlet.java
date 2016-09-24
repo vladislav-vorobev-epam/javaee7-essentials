@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 
         if (password.isEmpty() || "wrong".equals(password)) {
             log.warning("Login failure, redirect to proper page");
-            response.sendRedirect(request.getContextPath() + "/errors/login_failure.html");
+            response.sendRedirect(request.getContextPath() + "/errors/unauthorised.html");
         } else {
             HttpSession session = request.getSession(true);
             session.setAttribute("username", login);
