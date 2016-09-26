@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+    <datasource jta="true"
+                jndi-name="java:/jboss/datasources/todoDS"
+                pool-name="todoPool"
+                enabled="true"
+                use-java-context="true"
+                use-ccm="true">
+        <connection-url>jdbc:mysql://mysql:3306/todo</connection-url>
+        <driver>todo_war.com.mysql.jdbc.Driver_5_1</driver>
+        <driver-class>com.mysql.jdbc.Driver</driver-class>
+        <pool>
+            <max-pool-size>30</max-pool-size>
+        </pool>
+        <security>
+            <user-name>todo</user-name>
+            <password>todo</password>
+        </security>
+        <timeout>
+            <idle-timeout-minutes>0</idle-timeout-minutes>
+            <query-timeout>600</query-timeout>
+        </timeout>
+        <statement>
+            <prepared-statement-cache-size>100</prepared-statement-cache-size>
+            <share-prepared-statements>true</share-prepared-statements>
+        </statement>
+    </datasource>
+</datasources>

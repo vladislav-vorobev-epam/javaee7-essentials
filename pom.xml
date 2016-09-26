@@ -175,6 +175,12 @@
             <artifactId>hibernate-validator-annotation-processor</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.29</version>
+        </dependency>
+
 
         <!-- Needed for running tests (you may also use TestNG) -->
         <dependency>
