@@ -1,5 +1,6 @@
 package com.epam.cdp.jee.servlet;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,8 @@ import java.util.logging.Logger;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
-    private final static Logger log =  Logger.getLogger(LoginServlet.class.getName());
+    @Inject
+    private Logger log;
 
     @Override
     protected void doPost(final HttpServletRequest request, final HttpServletResponse response)

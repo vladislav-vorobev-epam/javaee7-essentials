@@ -1,5 +1,6 @@
 package com.epam.cdp.jee.filter;
 
+import javax.inject.Inject;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,10 @@ import java.util.logging.Logger;
  */
 @WebFilter(urlPatterns = {"/app.html", "/new.html"})
 public class AuthenticationFilter implements Filter{
-    public static final Logger log = Logger.getLogger(AuthenticationFilter.class.getName());
+
+    @Inject
+    private Logger log;
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
