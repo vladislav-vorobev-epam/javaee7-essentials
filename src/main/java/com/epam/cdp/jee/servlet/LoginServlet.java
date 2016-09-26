@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.setAttribute("username", login);
             log.info("Login succeed, redirect to proper page");
-            response.sendRedirect(request.getContextPath() + "/app.html");
+            response.sendRedirect(request.getContextPath() + "/app.jsf");
         }
     }
 

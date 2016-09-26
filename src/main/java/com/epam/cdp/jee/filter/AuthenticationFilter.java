@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 /**
  * Created by Vladislav on 25.09.2016.
  */
-@WebFilter(urlPatterns = {"/app.html", "/new.html"})
+@WebFilter(urlPatterns = {"/app.jsf"})
 public class AuthenticationFilter implements Filter{
 
     @Inject

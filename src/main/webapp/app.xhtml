@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      template="/WEB-INF/templates/default.xhtml">
+
+    <ui:define name="content">
+        <h1>Welcome #{username} to Our test app!</h1>
+
+        <div>
+            <p>The test app to teach us the Essentials!</p>
+        </div>
+
+
+        <h2>Members</h2>
+        <h:panelGroup rendered="#{empty members}">
+            <em>No registered members.</em>
+        </h:panelGroup>
+        <h:dataTable var="_member" value="#{members}"
+                     rendered="#{not empty members}"
+                     styleClass="simpletablestyle">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{_member.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{_member.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Email</f:facet>
+                #{_member.email}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Phone #</f:facet>
+                #{_member.phoneNumber}
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
+
