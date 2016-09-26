@@ -8,9 +8,36 @@
     <ui:define name="content">
         <h1>Welcome #{username} to Our test app!</h1>
 
-        <div>
-            <p>The test app to teach us the Essentials!</p>
-        </div>
+        <h:form id="reg">
+            <h2>Member Registration</h2>
+            <p>Enforces annotation-based constraints defined on the
+                model class.</p>
+            <h:panelGrid columns="3" columnClasses="titleCell">
+                <h:outputLabel for="name" value="Name:" />
+                <h:inputText id="name" value="#{newMember.name}" />
+                <h:message for="name" errorClass="invalid" />
+
+                <h:outputLabel for="email" value="Email:" />
+                <h:inputText id="email" value="#{newMember.email}" />
+                <h:message for="email" errorClass="invalid" />
+
+                <h:outputLabel for="phoneNumber" value="Phone #:" />
+                <h:inputText id="phoneNumber"
+                             value="#{newMember.phoneNumber}" />
+                <h:message for="phoneNumber" errorClass="invalid" />
+            </h:panelGrid>
+
+            <p>
+                <h:panelGrid columns="2">
+                    <h:commandButton id="register"
+                                     action="#{memberController.register}"
+                                     value="Register" styleClass="register" />
+                    <h:messages styleClass="messages"
+                                errorClass="invalid" infoClass="valid"
+                                warnClass="warning" globalOnly="true" />
+                </h:panelGrid>
+            </p>
+        </h:form>
 
 
         <h2>Members</h2>
