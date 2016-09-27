@@ -2,18 +2,24 @@ package com.epam.cdp.jee.model;
 
 
 import lombok.EqualsAndHashCode;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
+@Entity
 @SuppressWarnings("serial")
 @EqualsAndHashCode(exclude = "id")
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Member implements Serializable {
 
-
+    @Id
+    @GeneratedValue
     private Long id;
 
     @NotNull
@@ -22,6 +28,8 @@ public class Member implements Serializable {
     private String name;
 
     @NotNull
+    @NotEmpty
+    @Email
     private String email;
 
     @NotNull
