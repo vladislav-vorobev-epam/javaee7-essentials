@@ -25,5 +25,8 @@ public class MemberRegistration {
         log.info("Registering " + member.getName());
         repo.addMember(member);
         memberEventSrc.fire(member);
+
+        JMSService jmsService = new JMSService();
+        jmsService.sendMessage("Registering " + member.getName());
     }
 }
