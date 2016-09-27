@@ -1,19 +1,19 @@
 package com.epam.cdp.jee.service;
 
 import javax.annotation.Resource;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.jms.*;
+import javax.jms.JMSContext;
+import javax.jms.Queue;
 
 
-@RequestScoped
+@ApplicationScoped
 public class JMSService {
-
-    @Resource(mappedName = "queueName")
-    private Queue queue;
 
     @Inject
     JMSContext context;
+    @Resource(mappedName = "queueName")
+    private Queue queue;
 
     public void sendMessage(String txt) {
 
