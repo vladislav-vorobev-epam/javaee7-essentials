@@ -41,4 +41,13 @@ public class MemberRepository {
     public Long membersCount() {
         return em.createNamedQuery("getMembersCount", Long.class).getSingleResult();
     }
+
+    public Member findById(long id) {
+        return em.find(Member.class, id);
+    }
+
+    public Member findByEmail(String email) {
+        return em.createNamedQuery("findMemberByEmail", Member.class).setParameter("memEmail", email).getSingleResult();
+
+    }
 }

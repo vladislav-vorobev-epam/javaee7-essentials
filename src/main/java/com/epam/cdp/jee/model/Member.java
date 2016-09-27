@@ -16,10 +16,16 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 @EqualsAndHashCode(exclude = "id")
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-@NamedQuery(
-        name = "getMembersCount",
-        query = "SELECT count(m) FROM Member m"
-)
+@NamedQueries({
+        @NamedQuery(
+                name = "getMembersCount",
+                query = "SELECT count(m) FROM Member m"
+        ),
+        @NamedQuery(
+                name = "findMemberByEmail",
+                query = "SELECT m FROM Member m WHERE m.email = :memEmail"
+        )
+})
 public class Member implements Serializable {
 
     @Id
