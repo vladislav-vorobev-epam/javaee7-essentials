@@ -34,7 +34,11 @@ public class MemberRepository {
     }
 
     public void addMember(Member member) {
-      em.persist(member);
+        em.persist(member);
+    }
 
+
+    public Long membersCount() {
+        return em.createNamedQuery("getMembersCount", Long.class).getSingleResult();
     }
 }
